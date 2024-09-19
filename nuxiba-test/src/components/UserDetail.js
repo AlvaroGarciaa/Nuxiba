@@ -7,7 +7,7 @@ const UserDetail = ({ user, onShowPosts, onShowTodos, showPosts, showTodos, post
   <div style={{color: 'white'}}>
     <div style={{textAlign: 'center', marginBottom: '20px' ,marginTop:'20px'}} >
     <h2>{user.name}</h2>
-    <p>Username: {user.username}</p>
+    <p>Usuario: {user.username}</p>
     <p>Email: {user.email}</p>
     <div style={{marginTop: '20px'}}> 
       <Button variant="contained" color="primary" onClick={onShowPosts} style={{marginRight: '20px'}}>
@@ -74,7 +74,7 @@ const UserDetail = ({ user, onShowPosts, onShowTodos, showPosts, showTodos, post
       ))}
     </ul>
     <div style={{paddingTop: '25px'}}>
-    <h3>Add New Todo</h3>
+    <h3>Añadir Nuevo Todo</h3>
     <form onSubmit={onAddTodo}>
       <TextField
         label="Title"
@@ -86,10 +86,10 @@ const UserDetail = ({ user, onShowPosts, onShowTodos, showPosts, showTodos, post
       />
       <FormControlLabel
         control={<Checkbox name="completed" />}
-        label="Completed"
+        label="completado"
       />
       <Button type="submit" variant="contained" color="primary">
-        Save
+        Guardar
       </Button>
     </form>
     </div>
