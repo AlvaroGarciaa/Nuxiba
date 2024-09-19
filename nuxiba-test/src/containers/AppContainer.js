@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
+import {Card} from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers, fetchUserPosts, fetchUserTodos, addUserTodo } from '../redux/actions';
 import UserList from '../components/UserList';
 import UserDetail from '../components/UserDetail';
+import './AppContainer.css';
+import { blue, purple } from '@mui/material/colors';
 
 const AppContainer = () => {
   const dispatch = useDispatch();
@@ -45,20 +48,30 @@ const AppContainer = () => {
 
   return (
     <div className="App">
-      <UserList users={users} onUserSelect={handleUserSelect} />
-      {selectedUser && (
-        <UserDetail
-          user={selectedUser}
-          onShowPosts={handleShowPosts}
-          onShowTodos={handleShowTodos}
-          showPosts={showPosts}
-          showTodos={showTodos}
-          posts={posts}
-          todos={todos}
-          onAddTodo={handleAddTodo}
-        />
-      )}
-    </div>
+  <Card
+    style={{
+      maxWidth: 400,
+      margin: '50px 20px 0 ', // Margen de 50px en la parte superior
+      padding: '20px',
+      backgroundColor: '#300999' // Color morado oscuro
+    }}
+  >
+    <UserList users={users} onUserSelect={handleUserSelect} />
+    {selectedUser && (
+      <UserDetail
+        user={selectedUser}
+        onShowPosts={handleShowPosts}
+        onShowTodos={handleShowTodos}
+        showPosts={showPosts}
+        showTodos={showTodos}
+        posts={posts}
+        todos={todos}
+        onAddTodo={handleAddTodo}
+      />
+    )}
+  </Card>
+</div>
+
   );
 };
 
